@@ -9,12 +9,27 @@ $.ajaxSetup({
 </script>
 <script>
 $(document).ready(function(){
-    $(document).on('click','.add_product', function(e){
+    $(document).on('click','.save_product', function(e){
         e.preventDefault();
         let name = $('#name').val();
         let price = $('#price').val();
         let quantity = $('#quantity').val();
-        console.log(name, price, quantity);
-    })
+
+        $.ajax({
+            url: "{{route('add_product')}}",
+            method: 'POST',
+            data: {name:name, price:price, quantity:quantity},
+            success: function (res){
+                if(res.status=='success'){
+                    $('#addModal').modal('hide');
+                }
+            },error:function(err){
+                let error = err.responseJSON;
+                $.each(error.errors, function(index, value){
+                    $('.errmsg').append('<span class="text-danger">'+value+'</span>'+'<br>');
+                })
+            }
+        });
+    });
 })
 </script>

@@ -11,13 +11,11 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="errmsg">
-
-                    </div>
+                    <div class="errmsg"></div>
 
                     <div class="form-group ">
                         <label for="name">Product Name</label>
-                        <input type="text" class="form-control" id="name">
+                        <input type="text" class="form-control" id="name" name="name">
                     </div>
                     <div class="form-group my-2">
                         <label for="name">Price</label>
@@ -31,7 +29,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="color: black;">Close</button>
-                    <button type="button" class="btn btn-primary add_product" data-bs-dismiss="modal" style="color: black;">Save Product</button>
+                    <button type="button" class="btn btn-primary save_product"  style="color: black;">Save Product</button>
                 </div>
             </div>
         </div>
