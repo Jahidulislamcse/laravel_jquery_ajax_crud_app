@@ -24,7 +24,9 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
                     <h1 class="my-5 text-center"><b>CRUD USING AJAX</b></h1>
-                    <a href="" class="btn btn-success my-3" data-bs-toggle="modal" data-bs-target="#exampleModal" >Add Product</a>
+
+                    <a href="" class="btn btn-success my-3" data-bs-toggle="modal" data-bs-target="#addModal" >Add Product</a>
+
                     <div class="table-data">
                         <table class="table table-bordered">
                             <thead>
