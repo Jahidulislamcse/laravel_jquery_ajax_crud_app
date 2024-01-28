@@ -24,11 +24,12 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
                     <h1 class="my-5 text-center"><b>CRUD USING AJAX</b></h1>
+                    <a href="" class="btn btn-success my-3" data-bs-toggle="modal" data-bs-target="#exampleModal" >Add Product</a>
                     <div class="table-data">
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                <th scope="col">#</th>
+                                <th scope="col">SL.</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Price</th>
                                 <th scope="col">Quantity</th>
@@ -52,7 +53,8 @@
                 </div>
             </div>
         </div>
-    @include('product_js');
+    @include('add_product_modal')
+    @include('product_js')
     </body>
 </html>
 

@@ -9,6 +9,5 @@ $.ajaxSetup({
 </script>
 <script>
 $(document).ready(function(){
-    alert();
 })
 </script>
