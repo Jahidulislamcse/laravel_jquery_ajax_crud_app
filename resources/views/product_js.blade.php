@@ -76,5 +76,26 @@ $(document).ready(function(){
         });
     });
 
+        //Delete a Product
+    $(document).on('click','.delete_product', function(e){
+        e.preventDefault();
+        let id = $(this).data('id');
+
+        if(confirm('Are you sure you to delete this product')){
+            $.ajax({
+                url: "{{route('delete_product')}}",
+                method: 'POST',
+                data: {id:id},
+                success: function (res){
+                    if(res.status=='success'){
+                        $('.table').load(location.href+' .table')
+                    }
+
+                }
+        });
+        }
+
+    });
+
 })
 </script>

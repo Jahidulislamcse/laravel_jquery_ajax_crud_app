@@ -18,6 +18,8 @@ Route::middleware('auth')->group(function () {
 Route::get('/',[ProductController::class, 'products'])->name('products');
 Route::post('/add-product',[ProductController::class, 'addProduct'])->name('add_product');
 Route::post('/update-product',[ProductController::class, 'updateProduct'])->name('update_product');
+Route::post('/delete-product',[ProductController::class, 'deleteProduct'])->name('delete_product');
+
 
 
 

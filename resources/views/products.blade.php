@@ -55,7 +55,8 @@
                                         data-quantity="{{$product->quantity}}">
                                             <i class="las la-edit"></i></a>
 
-                                    <a href="" class="btn btn-danger">
+                                    <a href="" class=" delete_product btn btn-danger"
+                                        data-id="{{$product->id}}">
                                         <i class="las la-trash"></i></a>
                                 </td>
                                 </tr>
