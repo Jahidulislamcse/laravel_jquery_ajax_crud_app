@@ -33,5 +33,18 @@ $(document).ready(function(){
             }
         });
     });
+
+    //Update Product form
+    $(document).on('click', '.update_product_form', function(e) {
+        let id = $(this).data('id');
+        let name = $(this).data('name');
+        let price = $(this).data('price');
+        let quantity = $(this).data('quantity');
+
+        $('#update_name').val(name);
+        $('#update_price').val(price);
+        $('#update_quantity').val(quantity);
+    });
+
 })
 </script>
