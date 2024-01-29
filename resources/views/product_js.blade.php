@@ -41,9 +41,39 @@ $(document).ready(function(){
         let price = $(this).data('price');
         let quantity = $(this).data('quantity');
 
+        $('#product_id').val(id);
         $('#update_name').val(name);
         $('#update_price').val(price);
         $('#update_quantity').val(quantity);
+    });
+
+
+    //Update Product to Database
+    $(document).on('click','.update_product_button', function(e){
+        e.preventDefault();
+        let id = $('#product_id').val();
+        let name = $('#update_name').val();
+        let price = $('#update_price').val();
+        let quantity = $('#update_quantity').val();
+
+        $.ajax({
+            url: "{{route('update_product')}}",
+            method: 'POST',
+            data: {product_id:id, update_name:name, update_price:price, update_quantity:quantity},
+            success: function (res){
+                if(res.status=='success'){
+                    $('#updateModal').modal('hide');
+                    $('#updateProduct')[0].reset();
+                    $('.table').load(location.href+' .table')
+                }
+
+            },error:function(err){
+                let error = err.responseJSON;
+                $.each(error.errors, function(index, value){
+                    $('.errmsg').append('<span class="text-danger">'+value+'</span>'+'<br>');
+                })
+            }
+        });
     });
 
 })

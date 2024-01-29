@@ -37,4 +37,31 @@ class ProductController extends Controller
             'status' => 'success',
         ]);
     }
+
+    //Update Product Function
+        public function updateProduct(Request $request){
+        $request->validate(
+            [
+            'update_name'=>'required|unique:products,name,'.$request->product_id,
+            'update_price'=>'required',
+            'update_quantity'=>'required'
+            ],
+            [
+                'update_name.required'=>'Name is required',
+                'update_name.unique'=>'Already exist',
+                'update_price.required'=>'Price is required',
+                'update_quantity.required'=>'Quantity is required',
+            ]
+        );
+
+        Product::where('id', $request->product_id)->update([
+            'name'=>$request->update_name,
+            'price'=>$request->update_price,
+            'quantity'=>$request->update_quantity,
+        ]);
+
+        return response()->json([
+            'status' => 'success',
+        ]);
+    }
 }

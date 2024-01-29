@@ -14,6 +14,8 @@
                 <div class="modal-body">
                     <div class="errmsg"></div>
 
+                    <input type="hidden" class="form-control" id="product_id" name="product_id">
+
                     <div class="form-group ">
                         <label for="name">Product Name</label>
                         <input type="text" class="form-control" id="update_name" name="update_name">
@@ -30,7 +32,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal" style="color: black;">Close</button>
-                    <button type="button" class="btn btn-primary update_product"  style="color: black;">Update Product</button>
+                    <button type="button" class="btn btn-primary update_product_button"  style="color: black;">Update Product</button>
                 </div>
             </div>
         </div>
