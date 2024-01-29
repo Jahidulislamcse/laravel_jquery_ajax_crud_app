@@ -28,7 +28,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="color: black;">Close</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal" style="color: black;">Close</button>
                     <button type="button" class="btn btn-primary save_product"  style="color: black;">Save Product</button>
                 </div>
             </div>

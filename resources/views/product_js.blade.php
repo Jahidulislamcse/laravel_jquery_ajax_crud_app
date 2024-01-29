@@ -22,6 +22,8 @@ $(document).ready(function(){
             success: function (res){
                 if(res.status=='success'){
                     $('#addModal').modal('hide');
+                    $('#addProduct')[0].reset();
+                    $('.table').load(location.href+' .table')
                 }
             },error:function(err){
                 let error = err.responseJSON;
