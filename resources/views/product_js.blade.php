@@ -172,6 +172,23 @@ $(document).ready(function(){
             })
         }
 
+        //Search Productup
+        $(document).on('keyup', function(e){
+            e.preventDefault();
+            let search_value = $('#search').val();
+            
+            $.ajax({
+                url:"{{route('search_product')}}",
+                method: 'GET',
+                data:{search_value:search_value},
+                success: function(res){
+                    $('.table-data').html(res);
+                    if(res.status=='product_not_found'){
+                        $('.table-data').html('<span class="text-danger">'+'Product not found'+'</span>')
+                    }
+                }
+            });
+        })
 
 })
 </script>

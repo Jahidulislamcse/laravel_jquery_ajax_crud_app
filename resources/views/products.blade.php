@@ -29,6 +29,8 @@
 
                     <a href="" class="btn btn-success my-3" data-bs-toggle="modal" data-bs-target="#addModal" >Add Product</a>
 
+                    <input type="text" name="search" id="search" class="mb-3 form-control" placeholder="search here">
+
                     <div class="table-data">
                         <table class="table table-bordered">
                             <thead>
