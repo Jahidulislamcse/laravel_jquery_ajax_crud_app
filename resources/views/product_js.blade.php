@@ -155,8 +155,23 @@ $(document).ready(function(){
                 }
         });
         }
-
     });
+        //Pagination
+        $(document).on('click', '.pagination a', function(e){
+            e.preventDefault();
+            let page = $(this).attr('href').split('page=')[1];
+            product(page);
+
+        });
+        function product(page){
+            $.ajax({
+                url: "/paginate?page="+page,
+                success: function(res){
+                    $('.table-data').html(res);
+                }
+            })
+        }
+
 
 })
 </script>

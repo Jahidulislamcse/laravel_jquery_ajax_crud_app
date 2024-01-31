@@ -66,13 +66,15 @@ class ProductController extends Controller
     }
 
     public function deleteProduct(Request $request){
-
         Product::where('id', $request->id)->delete();
-
         return response()->json([
             'status' => 'success',
         ]);
+    }
 
+    public function paginate(Request $request){
+        $products = Product::latest()->paginate(5);
+        return view('paginated_products', compact('products'))->render();
     }
 
 }
